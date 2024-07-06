@@ -1,0 +1,208 @@
+@import url(https://db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+
+*,
+*::before,
+*::after {
+  font-family: "Maison Neue Book", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #0e0e0e;
+}
+
+/* 
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+} */
+
+html,
+body {
+  width: 100%;
+  overscroll-behavior: none;
+  min-height: 100%;
+}
+
+:root {
+  --gap: 14.5px;
+  --num-text-gap: 48px;
+
+  --s-font: 14px;
+  --s-m-font: 21px;
+  --m-font: 24px;
+  --l-font: 32px;
+  --v-l-font: 56px;
+  --xxl-font: 58px;
+
+  --normal: 400;
+  --bold: 500;
+
+  --margin-top: 16px;
+  --margin-bot-l: 125px;
+
+  --section-spacing: 48px;
+
+  --line-height-decreased: 97%;
+  --line-height-normal: 100%;
+  --line-height-increased: 110%;
+  --line-height-large: 140%;
+
+  --underline: underline;
+  --uppercase: uppercase;
+  --none: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  margin-bottom: var(--section-spacing);
+}
+
+main {
+  overflow: hidden;
+  text-transform: var(--uppercase);
+  font-size: var(--s-m-font);
+  line-height: var(--line-height-normal);
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.container {
+  padding: 24px 15px;
+}
+
+/* Smooth scrolling */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@media (width < 650px) {
+  section {
+    margin: 0;
+  }
+
+  main {
+    font-size: var(--s-font);
+  }
+}
+
+/* NAVBAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: var(--s-m-font);
+  line-height: 100%;
+  padding: 24px 15px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav span a {
+  text-decoration: none;
+  color: black;
+}
+
+.close,
+.open {
+  width: 18px;
+  display: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.disabled:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+@media (width < 650px) {
+  header.active {
+    background-color: black;
+    transition: all 400ms ease 100ms;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  nav {
+    font-size: var(--s-font);
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul.active {
+    font-size: var(--l-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  nav li {
+    margin: 5px 0;
+    color: white;
+  }
+
+  nav a {
+    color: white;
+  }
+
+  nav span a.active {
+    position: relative;
+    z-index: 2;
+    color: rgb(194, 191, 191);
+  }
+
+  .open,
+  .close {
+    display: block;
+  }
+
+  .close {
+    filter: brightness(0) invert(0.8);
+  }
+}
